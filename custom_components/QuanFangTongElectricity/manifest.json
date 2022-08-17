@@ -1,0 +1,12 @@
+{
+  "domain": "QuanFangTongElectricity",
+  "name": "QuanFangTong electricity query",
+  "version": "1.0.0",
+  "documentation": "https://github.com/zrincet/QuanFangTongElectricity",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": [
+    "@zrincet"
+  ],
+  "iot_class": "cloud_polling"
+}

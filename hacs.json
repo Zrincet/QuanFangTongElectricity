@@ -1,0 +1,6 @@
+ {
+  "name": "QuanFangTongElectricity",
+  "country": "CN",
+  "render_readme": true,
+  "domains": ["sensor"]
+}

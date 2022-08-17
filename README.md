@@ -1,0 +1,2 @@
+# QuanFangTongElectricity
+ Home Assistant plugin
