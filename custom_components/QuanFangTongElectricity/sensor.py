@@ -30,13 +30,13 @@ _LOGGER = logging.getLogger(__name__)
 REQUIREMENTS = ['requests', 'beautifulsoup4']
 
 COMPONENT_REPO = 'https://github.com/zrincet/QuanFangTongElectricity/'
-SCAN_INTERVAL = timedelta(seconds=3600)
+SCAN_INTERVAL = timedelta(seconds=1800)
 CONF_OPTIONS = "options"
 ATTR_UPDATE_TIME = "更新时间"
 # ATTR_ROOM_NAME = "房间名称"
 
-OPTIONS = dict(ele_today=["QuanFangTong_ele_today", "今日电量", "mdi:flash", "kW·h"],
-               ele_month=["QuanFangTong_ele_month", "本月电量", "mdi:flash", "kW·h"],
+OPTIONS = dict(ele_today=["QuanFangTong_ele_today", "今日电量", "mdi:flash", "kWh"],
+               ele_month=["QuanFangTong_ele_month", "本月电量", "mdi:flash", "kWh"],
                balance=["QuanFangTong_balance", "剩余余额", "mdi:wallet", "￥"])
 
 CONF_PHONE = "phone"
@@ -98,7 +98,7 @@ class BeeSCRMElectricitySensor(Entity):
             re_json = requests.get(url, headers=headers).json()['data']
             self._ele_today = re_json['today']
             self._ele_month = re_json['month']
-            self._price = re_json['blnance']
+            self._price = float(re_json['blnance'])*1.2
             self._updateTime = now.strftime("%Y-%m-%d %H:%M:%S")
 
             if self._type == "ele_today":
